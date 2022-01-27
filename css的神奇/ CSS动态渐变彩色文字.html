@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CSS动态渐变彩色文字</title>
+  <style>
+      @keyframes move {
+      0% {background-position: 0 0;}
+      100% {
+        /*宽度固定，如果为百分比背景不会滚动*/
+        background-position: -300px 0;
+      }
+}    
+.wrap {
+/*设置背景渐变色*/
+  background-image: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange, yellow, green, yellow, orange, red);      
+  /*chrome私有样式，加前缀，文字显示背景图片*/
+  -webkit-background-clip: text;      
+  animation: move 5s infinite;      
+  /*文字颜色设为透明*/
+  color: transparent;      
+  /*宽度固定*/
+  width: 300px;
+}
+  </style>
+</head>
+<body>
+<div class="wrap">野蛮人之间人吃人，文明人之间人骗人。 —— 叔本华「人生的智慧」</div>
+</body>
+</html>
